@@ -3,6 +3,9 @@ import pygame
 class Player(pygame.sprite.Sprite):
     def __init__(self, scale):
         pygame.sprite.Sprite.__init__(self)
+        
+        self.scale = scale
+        
         self.image = pygame.image.load("sprites/player.png")
         self.image_up = pygame.image.load("sprites/player_up.png")
         self.image_down = pygame.image.load("sprites/player_down.png")
@@ -10,6 +13,7 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.w = self.rect.width * scale
         self.h = self.rect.height * scale
+        
         self.moving_up = False
         self.moving_down = False
     
